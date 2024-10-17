@@ -2261,20 +2261,9 @@ class _FlutterSliderState extends State<FlutterSlider>
   void _renderBoxInitialization() {
     RenderBox containerRenderBox =
         containerKey.currentContext!.findRenderObject() as RenderBox;
-    final currentContainerLeft =
-        containerRenderBox.localToGlobal(Offset.zero).dx;
-    final currentContainerTop =
-        containerRenderBox.localToGlobal(Offset.zero).dy;
-    if (_containerLeft <= 0 ||
-        (MediaQuery.of(context).size.width - _constraintMaxWidth) <=
-            currentContainerLeft) {
-      _containerLeft = currentContainerLeft;
-    }
-    if (_containerTop <= 0 ||
-        (MediaQuery.of(context).size.height - _constraintMaxHeight) <=
-            currentContainerTop) {
-      _containerTop = currentContainerTop;
-    }
+
+    _containerLeft = containerRenderBox.localToGlobal(Offset.zero).dx;
+    _containerTop = containerRenderBox.localToGlobal(Offset.zero).dy;
   }
 }
 
